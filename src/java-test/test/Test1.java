@@ -13,5 +13,6 @@ public class Test1 {
 	public void java8() {
 		List<String> list = Arrays.asList("a", "b");
 		Collections.sort(list, (s1, s2) -> 0);
+		// edit
 	}
 }
