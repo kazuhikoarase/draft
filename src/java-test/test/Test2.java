@@ -8,22 +8,23 @@ import java.lang.annotation.Target;
 
 import org.junit.Test;
 
-@Target(ElementType.LOCAL_VARIABLE) @Retention(RetentionPolicy.RUNTIME)
-@interface LocalVar {}
-
-@Target(ElementType.TYPE_USE) @Retention(RetentionPolicy.RUNTIME)
-@interface TypeUse {}
-
-@Target(ElementType.TYPE_PARAMETER) @Retention(RetentionPolicy.RUNTIME)
-@interface TypeParam {}
-
-@Target(ElementType.PARAMETER) @Retention(RetentionPolicy.RUNTIME)
-@interface Param {}
-
-
-class MyClass<@TypeParam T> {}
 
 public class Test2 {
+
+	@Target(ElementType.LOCAL_VARIABLE) @Retention(RetentionPolicy.RUNTIME)
+	public @interface LocalVar {}
+
+	@Target(ElementType.TYPE_USE) @Retention(RetentionPolicy.RUNTIME)
+	public @interface TypeUse {}
+
+	@Target(ElementType.TYPE_PARAMETER) @Retention(RetentionPolicy.RUNTIME)
+	public @interface TypeParam {}
+
+	@Target(ElementType.PARAMETER) @Retention(RetentionPolicy.RUNTIME)
+	public @interface Param {}
+
+
+	public static class MyClass<@TypeParam T> {}
 
 	@Test
 	public void annot() {
