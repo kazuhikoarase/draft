@@ -1,4 +1,3 @@
-
 package test;
 
 import java.lang.invoke.MethodHandle;
@@ -58,5 +57,4 @@ public class Test1 {
 		Assert.assertEquals(2, a);
 		return s1.compareTo(s2);
 	}
-	
 }

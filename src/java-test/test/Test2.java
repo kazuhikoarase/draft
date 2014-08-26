@@ -1,13 +1,14 @@
-
 package test;
 
+import java.io.File;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.Arrays;
+import java.util.stream.Stream;
 
 import org.junit.Test;
-
 
 public class Test2 {
 
@@ -31,6 +32,9 @@ public class Test2 {
 		@LocalVar @TypeUse String a = "TEST";
 		MyClass<String> b;
 		MyClass<@TypeUse String> c;
+		new File("");
+	Arrays.asList("").stream();
+		Stream<String> s;
 	}
 
 	public <T> void test(@Param @TypeUse T  a) {
