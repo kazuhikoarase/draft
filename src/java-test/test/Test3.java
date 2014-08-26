@@ -5,13 +5,18 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Test3 {
 
-	public void test() throws IOException {
+	public void test() throws Exception {
 
-//		Function<String,Integer> f1 = MyClass::length;
+		Function<String,Integer> f1 = MyClass::length;
 		Function<MyClass,Integer> f2 = MyClass::length;
 		Function<String,Integer> f3 = String::length;
 
@@ -24,5 +29,27 @@ public class Test3 {
 				new InputStreamReader(new FileInputStream("log"), "UTF-8") ) ) {
 			in.lines().forEach((s)->{});
 		}
+		
+		List<MyClass> list = new ArrayList<>();
+		append(list, MyClass.class);
+		append(list, MyClass::new);
+		
+
+	}
+	
+	public void getterTest(Map<String,Object> map) throws Exception {
+		PropertyGetter<String,Object> getter = map::get;
+	}
+	
+	public void getterTest(ResultSet rs) throws Exception {
+		PropertyGetter<String,Object> getter = rs::getObject;
+	}
+
+	public <T> void append(List<T> list, Class<T> clazz) throws Exception {
+		list.add(clazz.newInstance() );
+	}
+
+	public <T> void append(List<T> list, Supplier<T> factory) throws Exception {
+		list.add(factory.get() );
 	}
 }
