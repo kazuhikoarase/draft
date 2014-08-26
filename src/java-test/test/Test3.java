@@ -36,13 +36,16 @@ public class Test3 {
 		
 
 	}
-	
+
 	public void getterTest(Map<String,Object> map) throws Exception {
-		PropertyGetter<String,Object> getter = map::get;
+		func(map::get);
 	}
-	
+
 	public void getterTest(ResultSet rs) throws Exception {
-		PropertyGetter<String,Object> getter = rs::getObject;
+		func(rs::getObject);
+	}
+
+	public void func(PropertyGetter<String,?> getter) throws Exception {
 	}
 
 	public <T> void append(List<T> list, Class<T> clazz) throws Exception {
