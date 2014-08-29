@@ -1,4 +1,4 @@
-package test;
+package j8;
 
 @FunctionalInterface
 public interface PropertyGetter<K, V> {

@@ -1,4 +1,4 @@
-package test;
+package j8;
 
 public class MyClass {
 	public MyClass() {}

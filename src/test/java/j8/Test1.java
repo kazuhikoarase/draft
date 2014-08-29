@@ -1,4 +1,4 @@
-package test;
+package j8;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandleProxies;

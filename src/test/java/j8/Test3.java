@@ -1,4 +1,4 @@
-package test;
+package j8;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

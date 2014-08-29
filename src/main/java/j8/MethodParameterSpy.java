@@ -1,4 +1,4 @@
-package test;
+package j8;
 
 /*
  * Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved.
