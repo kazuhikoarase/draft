@@ -95,7 +95,8 @@ public class MethodParameterSpy {
      
     public static void main(String... args) {        
         try {
-        	Class<?> clazz = args.length == 0? Test3.class : Class.forName(args[0]);
+        	Class<?> clazz = args.length == 0?
+        			MethodParameterSpy.class : Class.forName(args[0]);
         	printClassConstructors(clazz);
             printClassMethods(clazz);
         } catch (ClassNotFoundException x) {
