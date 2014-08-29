@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>draft</groupId>
   <artifactId>draft</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>${maven.build.timestamp}-SNAPSHOT</version>
   <packaging>war</packaging>
   <build>
     <plugins>
@@ -29,6 +29,10 @@
   		<groupId>junit</groupId>
   		<artifactId>junit</artifactId>
   		<version>4.11</version>
+  		<scope>test</scope>
   	</dependency>
   </dependencies>
+  <properties>
+    <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
+  </properties>
 </project>
