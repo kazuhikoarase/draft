@@ -31,6 +31,11 @@
   		<version>4.11</version>
   		<scope>test</scope>
   	</dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>3.2.10.RELEASE</version>
+    </dependency>
   </dependencies>
   <properties>
     <maven.build.timestamp.format>yyyyMMddHHmm</maven.build.timestamp.format>
