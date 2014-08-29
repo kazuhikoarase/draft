@@ -2,7 +2,6 @@ package test;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.ResultSet;
@@ -33,8 +32,6 @@ public class Test3 {
 		List<MyClass> list = new ArrayList<>();
 		append(list, MyClass.class);
 		append(list, MyClass::new);
-		
-
 	}
 
 	public void getterTest(Map<String,Object> map) throws Exception {
@@ -46,6 +43,7 @@ public class Test3 {
 	}
 
 	public void func(PropertyGetter<String,?> getter) throws Exception {
+		getter.get("");
 	}
 
 	public <T> void append(List<T> list, Class<T> clazz) throws Exception {
