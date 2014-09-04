@@ -1,4 +1,4 @@
-<%@page import="s3.app.MessagePrinter"%>
+<%@page import="s3.app.MessagePrinter" %>
 <%@page import="org.springframework.context.ApplicationContext"%>
 <%@page import="org.springframework.web.context.support.WebApplicationContextUtils"%>
 <%
