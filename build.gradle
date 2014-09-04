@@ -1,0 +1,57 @@
+
+//apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+compileJava.options.encoding = 'UTF-8'
+//webAppDirName = 'WebContent'
+
+ext {
+    springVersion = '4.0.6.RELEASE'
+//  springVersion = "3.1.0.RELEASE"
+}
+
+// test
+/*
+ * here is comment
+ */
+task mytest << {
+    def ans = 2 + 4 * 1.08
+
+    println """hello!
+multi line print!!! ${ans}
+"""
+    println "springVersion:${springVersion}"
+}
+
+uploadArchives {
+    repositories {
+       flatDir {
+           dirs 'repos'
+       }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    providedCompile "javax.servlet:javax.servlet-api:3.0.1"
+
+    compile "javax.servlet:jstl:1.2"
+    compile "org.codehaus.groovy:groovy-all:2.3.4"
+    compile "commons-logging:commons-logging:1.1"
+
+    compile "org.springframework:spring-context:${springVersion}"
+    compile "org.springframework:spring-web:${springVersion}"
+    compile "org.springframework:spring-webmvc:${springVersion}"
+    compile "org.codehaus.jackson:jackson-mapper-asl:1.9.13"
+
+    testCompile 'junit:junit:4.11'
+}
