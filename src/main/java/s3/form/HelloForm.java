@@ -1,9 +1,9 @@
-package s3.hello;
+package s3.form;
 
 import java.io.Serializable;
 
 @SuppressWarnings("serial")
-public class Hello implements Serializable {
+public class HelloForm implements Serializable {
 	private String firstName;
 	private String lastName;
 	public String getFirstName() {

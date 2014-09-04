@@ -4,7 +4,7 @@
 
     <jsp:directive.page contentType="text/html; charset=UTF-8"/> 
 
-	<form:form modelAttribute="hello">
+	<form:form modelAttribute="helloForm">
 	    <table>
 	        <tr>
 	            <td>First Name:</td>
