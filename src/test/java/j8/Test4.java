@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class Test4 {
 
+	@SuppressWarnings("unused")
 	@Test
 	public void measure1() {
 

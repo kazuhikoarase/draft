@@ -23,18 +23,16 @@ public class MessagePrinterTest {
         };
     }
 
+	ApplicationContext context = 
+			new AnnotationConfigApplicationContext(MessagePrinterTest.class);
 	@Test
 	public void test1() {
-		ApplicationContext context = 
-				new AnnotationConfigApplicationContext(MessagePrinterTest.class);
 		MessageService service = context.getBean(MessageService.class);
 		Assert.assertEquals("Hello World!", service.getMessage() );
 	}
 
 	@Test
 	public void test2() {
-		ApplicationContext context = 
-				new AnnotationConfigApplicationContext(MessagePrinterTest.class);
 		MessagePrinter printer = context.getBean(MessagePrinter.class);
 		printer.printMessage();
          

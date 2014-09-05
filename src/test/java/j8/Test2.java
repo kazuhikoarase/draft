@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 import org.junit.Test;
 
 public class Test2 {
-/*
+
 	@Target(ElementType.LOCAL_VARIABLE) @Retention(RetentionPolicy.RUNTIME)
 	public @interface LocalVar {}
 
@@ -24,14 +24,15 @@ public class Test2 {
 
 	public static class MyClass<@TypeParam T> {}
 
+	@Test
+	@SuppressWarnings("unused")
 	public void annot() {
 		@LocalVar @TypeUse String a = "TEST";
-		MyClass<String> b;
-		MyClass<@TypeUse String> c;
+		MyClass<String> b = null;
+		MyClass<@TypeUse String> c = null;
 	}
 
 	public <T> void test(@Param @TypeUse T  a) {
 		
 	}
-*/	
 }

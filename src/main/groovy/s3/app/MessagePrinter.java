@@ -8,7 +8,7 @@ import s3.service.MessageService;
 @Component
 public class MessagePrinter {
 
-    final private MessageService service;
+    private final MessageService service;
 
     @Autowired
     public MessagePrinter(MessageService service) {
@@ -16,6 +16,6 @@ public class MessagePrinter {
     }
 
     public void printMessage() {
-        System.out.println(this.service.getMessage());
+        System.out.println(service.getMessage() );
     }
 }

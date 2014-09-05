@@ -41,6 +41,7 @@ public class Test1 {
 	}
 
 	@Test
+	@SuppressWarnings("unchecked")
 	public void lambda4() throws Exception {
 		int a = 2;
 		MethodHandle mh = MethodHandles.lookup().
@@ -53,7 +54,7 @@ public class Test1 {
 				asInterfaceInstance(Comparator.class, mh) );
 	}
 	
-	private static int method(int a, String s1, String s2) {
+	protected static int method(int a, String s1, String s2) {
 		Assert.assertEquals(2, a);
 		return s1.compareTo(s2);
 	}

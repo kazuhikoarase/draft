@@ -14,24 +14,24 @@ import s3.service.MessageService;
 @Controller
 @SessionAttributes
 @RequestMapping("/Hello")
-public class HelloController {
+class HelloController {
 
 	@Autowired
 	private MessageService messageService;
 
 	@RequestMapping(method=RequestMethod.GET)
-	public String init(ModelMap model) {
+	String init(ModelMap model) {
 
 		HelloForm helloForm = new HelloForm();
-		helloForm.setFirstName(messageService.getMessage() );
-		helloForm.setLastName("$L$");
+		helloForm.firstName = messageService.getMessage();
+		helloForm.lastName = "groovy";
 		model.addAttribute("helloForm", helloForm);
 		return "HelloView";
 	}
 
 	@RequestMapping(method=RequestMethod.POST)
-	public String exec(@ModelAttribute("helloForm") HelloForm helloForm) {
-		System.out.println("[" +
+	String exec(@ModelAttribute("helloForm") HelloForm helloForm) {
+		println("[" +
 				helloForm.getFirstName() +
 				" " +
 				helloForm.getLastName() +

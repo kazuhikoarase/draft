@@ -6,14 +6,11 @@ import org.springframework.stereotype.Service;
 
 import s3.service.MessageService;
 
-
-
 @Service
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class MessageServiceImpl implements MessageService {
 	@Override
 	public String getMessage() {
-		
 		return "H311o World!";
 	}
 }
