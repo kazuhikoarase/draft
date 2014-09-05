@@ -7,6 +7,12 @@ angular.module('hello', [])
 		history: []
 	};
 
+	$scope.opts = [
+		{value: '01', label: 'apple'},
+		{value: '02', label: 'orange'},
+		{value: '03', label: 'pine'}
+	];
+
 	$scope.saveChanges = function() {
 
 		$http({

@@ -21,9 +21,8 @@
         </tr>
         <tr>
           <td colspan="2">
-            <form ng-submit="saveChanges()" >
-              <input type="submit" value="Save Changes" />
-            </form>
+            <input type="button" value="Save Changes" 
+              ng-click="saveChanges()" />
           </td>
         </tr>
       </table>
@@ -33,11 +32,31 @@
           <th>date</th>
           <th>firstName</th>
           <th>lastName</th>
+          <th>field1</th>
+          <th>field2</th>
+          <th>field3</th>
         </tr>
         <tr ng-repeat="item in data.history">
           <td>{{item.date}}</td>
           <td><input type="text" ng-model="item.firstName" /></td>
           <td><input type="text" ng-model="item.lastName" /></td>
+          <td>
+            <select ng-model="item.field1">
+              <option value="{{opt.value}}"
+                ng-repeat="opt in opts" 
+                ng-selected="{{item.field1 == opt.value}}"
+                >{{opt.label}}</option>
+            </select>
+          </td>
+          <td>
+            <label ng-repeat="opt in opts">
+              <input type="radio" value="{{opt.value}}"
+                ng-model="item.field2"
+                ng-checked="{{item.field2 == opt.value}}"
+              />{{opt.label}}
+            </label>
+          </td>
+          <td><input type="checkbox" ng-model="item.field3" /></td>
         </tr>
       </table>
    </div>
