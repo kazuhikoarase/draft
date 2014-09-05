@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="hello" >
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script src="assets/angular.js"></script>
+    <script src="hello-aj.js"></script>
+    <title>hello-aj</title>
+  </head>
+  <body>
+
+    <div ng-controller="HelloController">
+      <table>
+        <tr>
+          <td>First Name:</td>
+          <td><input type="text" ng-model="data.firstName" /></td>
+        </tr>
+        <tr>
+          <td>Last Name:</td>
+          <td><input type="text" ng-model="data.lastName" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+      <form ng-submit="saveChanges()" >
+              <input type="submit" value="Save Changes" />
+            </form>
+          </td>
+        </tr>
+      </table>
+
+      <table>
+        <tr>
+          <th>date</th>
+          <th>firstName</th>
+          <th>lastName</th>
+        </tr>
+        <tr ng-repeat="item in data.history">
+          <td>{{item.date}}</td>
+          <td><input type="text" ng-model="item.firstName" /></td>
+          <td><input type="text" ng-model="item.lastName" /></td>
+        </tr>
+      </table>
+   </div>
+
+  </body>
+</html>

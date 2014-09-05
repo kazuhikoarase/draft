@@ -43,7 +43,8 @@ repositories {
 dependencies {
 
     providedCompile "javax.servlet:javax.servlet-api:3.0.1"
-
+	providedCompile "javax.servlet:jsp-api:2.0"
+	
     compile "javax.servlet:jstl:1.2"
     compile "org.codehaus.groovy:groovy-all:2.3.4"
     compile "commons-logging:commons-logging:1.1"
