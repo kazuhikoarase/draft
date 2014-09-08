@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
-    xmlns:form="http://www.springframework.org/tags/form" >
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" >
 
     <jsp:directive.page contentType="text/html; charset=UTF-8"/>
 
 <jsp:text><![CDATA[<!doctype html>]]></jsp:text>
-<html ng-app="hello" >
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="hello" >
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <script src="assets/angular.js"><jsp:text/></script>
-    <script src="hello-aj.js"><jsp:text/></script>
+    <script src="assets/angular.js" ><jsp:text /></script>
+    <script src="hello-aj.js" ><jsp:text /></script>
     <title>hello-aj</title>
   </head>
   <body>
@@ -47,19 +46,20 @@
           <td><input type="text" ng-model="item.firstName" /></td>
           <td><input type="text" ng-model="item.lastName" /></td>
           <td>
-            <select ng-model="item.field1">
+            <select ng-model="item.field1" >
               <option value="{{opt.value}}"
                 ng-repeat="opt in opts" 
-                ng-selected="{{item.field1 == opt.value}}"
-                >{{opt.label}}</option>
+                ng-selected="{{item.field1 == opt.value}}" >
+                <jsp:text>{{opt.label}}</jsp:text>
+              </option>
             </select>
           </td>
           <td>
-            <label ng-repeat="opt in opts">
+            <label ng-repeat="opt in opts" >
               <input type="radio" value="{{opt.value}}"
                 ng-model="item.field2"
-                ng-checked="{{item.field2 == opt.value}}"
-              />{{opt.label}}
+                ng-checked="{{item.field2 == opt.value}}" />
+              <jsp:text>{{opt.label}}</jsp:text>
             </label>
           </td>
           <td><input type="checkbox" ng-model="item.field3" /></td>
