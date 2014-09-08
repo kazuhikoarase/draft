@@ -1,9 +1,15 @@
-<!doctype html>
+<?xml version="1.0" encoding="UTF-8" ?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+    xmlns:form="http://www.springframework.org/tags/form" >
+
+    <jsp:directive.page contentType="text/html; charset=UTF-8"/>
+
+<jsp:text><![CDATA[<!doctype html>]]></jsp:text>
 <html ng-app="hello" >
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-    <script src="assets/angular.js"></script>
-    <script src="hello-aj.js"></script>
+    <script src="assets/angular.js"><jsp:text/></script>
+    <script src="hello-aj.js"><jsp:text/></script>
     <title>hello-aj</title>
   </head>
   <body>
@@ -63,3 +69,5 @@
 
   </body>
 </html>
+
+</jsp:root>
