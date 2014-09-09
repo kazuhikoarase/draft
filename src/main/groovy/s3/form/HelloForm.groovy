@@ -6,11 +6,11 @@ import groovy.transform.ToString;
 class HelloForm implements Serializable {
 	String firstName;
 	String lastName;
-	List<Item> history = new ArrayList<Item>();
+	List<HelloForm_Item> history = new ArrayList<HelloForm_Item>();
 }
 
 @ToString(includeNames=true,includeFields=true)
-class Item implements Serializable {
+class HelloForm_Item implements Serializable {
 	String firstName;
 	String lastName;
 	String date;
@@ -21,3 +21,5 @@ class Item implements Serializable {
 	// to avoid getter confliction
 	boolean getField3() { return field3; }
 }
+
+

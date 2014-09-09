@@ -15,19 +15,23 @@
 
     <div ng-controller="HelloController">
 
+<input type="text" ng-model="a" />
+<input type="text" ng-model="b" />
+{{calc(a, b)|number:2}}
+
       <table>
         <tr>
           <td>First Name:</td>
-          <td><input type="text" ng-model="data.firstName" /></td>
+          <td><input type="text" ng-model="helloModel.firstName" /></td>
         </tr>
         <tr>
           <td>Last Name:</td>
-          <td><input type="text" ng-model="data.lastName" /></td>
+          <td><input type="text" ng-model="helloModel.lastName" /></td>
         </tr>
         <tr>
           <td colspan="2">
             <input type="button" value="Save Changes" 
-              ng-click="saveChanges()" />
+              ng-click="callServer('addHistory')" />
           </td>
         </tr>
       </table>
@@ -41,7 +45,7 @@
           <th>field2</th>
           <th>field3</th>
         </tr>
-        <tr ng-repeat="item in data.history">
+        <tr ng-repeat="item in helloModel.history">
           <td>{{item.date}}</td>
           <td><input type="text" ng-model="item.firstName" /></td>
           <td><input type="text" ng-model="item.lastName" /></td>

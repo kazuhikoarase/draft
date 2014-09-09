@@ -1,11 +1,7 @@
 angular.module('hello', [])
-.controller('HelloController', function($scope, $http) {
+.controller('HelloController', function($scope, $http, $rootScope) {
 
-	$scope.data = {
-		firstName: '',
-		lastName: '',
-		history: []
-	};
+	$scope.helloModel = {};
 
 	$scope.opts = [
 		{value: '01', label: 'apple'},
@@ -13,18 +9,19 @@ angular.module('hello', [])
 		{value: '03', label: 'pine'}
 	];
 
-	$scope.saveChanges = function() {
-
+	$scope.callServer = function(method) {
+	
 		$http({
-			url: 's/HelloJSON',
+			url: 's/HelloJSON/' + method,
 			method: 'POST',
-			data: JSON.stringify(angular.copy($scope.data) ),
+			data: JSON.stringify(angular.copy($scope.helloModel) ),
 			headers: {'Content-Type': 'application/json'}
 		}).success(function (data, status, headers, config) {
 			console.log(data);
-			$scope.data = data;
+			$scope.helloModel = data;
 		}).error(function (data, status, headers, config) {
 		});
 	};
 
-} );
+	$scope.callServer('init');
+});
