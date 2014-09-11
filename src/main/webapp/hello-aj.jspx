@@ -7,7 +7,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" ng-app="hello" >
   <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="assets/bootstrap.css" />
     <script src="assets/angular.js" ><jsp:text /></script>
+    <script src="assets/ui-bootstrap-tpls-0.11.0.js"><jsp:text /></script>
     <script src="hello-aj.js" ><jsp:text /></script>
     <title>hello-aj</title>
   </head>
@@ -15,22 +17,21 @@
 
     <div ng-controller="HelloController">
 
-<input type="text" ng-model="a" />
-<input type="text" ng-model="b" />
-{{calc(a, b)|number:2}}
-
       <table>
         <tr>
           <td>First Name:</td>
-          <td><input type="text" ng-model="helloModel.firstName" /></td>
+          <td><input type="text" ng-model="helloModel.firstName"
+          class="form-control" /></td>
         </tr>
         <tr>
           <td>Last Name:</td>
-          <td><input type="text" ng-model="helloModel.lastName" /></td>
+          <td><input type="text" ng-model="helloModel.lastName" 
+          class="form-control" /></td>
         </tr>
         <tr>
           <td colspan="2">
-            <input type="button" value="Save Changes" 
+            <input type="button" value="Save Changes"
+              class="btn btn-default"
               ng-click="callServer('addHistory')" />
           </td>
         </tr>

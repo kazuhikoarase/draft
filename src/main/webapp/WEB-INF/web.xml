@@ -28,7 +28,7 @@
   </filter-mapping>
 
   <servlet>
-      <servlet-name>dispatcher</servlet-name>
+      <servlet-name>remoting</servlet-name>
       <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
       <init-param>
         <param-name>contextConfigLocation</param-name>
@@ -38,11 +38,22 @@
   </servlet>
 
   <servlet-mapping>
-      <servlet-name>dispatcher</servlet-name>
-      <url-pattern>/s/*</url-pattern>
+      <servlet-name>remoting</servlet-name>
+      <url-pattern>/remoting/*</url-pattern>
   </servlet-mapping>
 
-  <listener>
+  <servlet>
+    <servlet-name>jaxws-servlet</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSSpringServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>jaxws-servlet</servlet-name>
+    <url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
+
+ <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
 

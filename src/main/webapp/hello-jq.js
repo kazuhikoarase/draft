@@ -7,7 +7,7 @@ $(function() {
 		var firstName = $('#firstName').val();
 		var lastName = $('#lastName').val();
 		$.ajax({
-			url: 's/HelloJSON',
+			url: 'remoting/HelloJSON/addHistory',
 			type: 'POST', 
 			contentType: 'application/json',
 			data: JSON.stringify({
