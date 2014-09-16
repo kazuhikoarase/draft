@@ -36,6 +36,11 @@ class HelloController {
 				" " +
 				helloForm.getLastName() +
 				"]");
+		int c = 0;
+		Closure a = {int a, String b-> 
+			c += 1;
+			return 0;
+		};
 		return "HelloView";
 	}
 }
