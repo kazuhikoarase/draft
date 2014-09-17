@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import s3.service.MessageService;
-
+/*
 @Configuration
 @ComponentScan
 public class MessagePrinterTest {
@@ -25,16 +25,18 @@ public class MessagePrinterTest {
 
 	ApplicationContext context = 
 			new AnnotationConfigApplicationContext(MessagePrinterTest.class);
-	@Test
+//	@Test
 	public void test1() {
 		MessageService service = context.getBean(MessageService.class);
 		Assert.assertEquals("Hello World!", service.getMessage() );
 	}
 
-	@Test
+//	@Test
 	public void test2() {
 		MessagePrinter printer = context.getBean(MessagePrinter.class);
 		printer.printMessage();
          
 	}
 }
+
+*/

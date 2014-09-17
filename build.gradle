@@ -46,8 +46,9 @@ dependencies {
 	providedCompile "javax.servlet:jsp-api:2.0"
 
     compile "javax.servlet:jstl:1.2"
-    compile "org.codehaus.groovy:groovy-all:2.3.4"
+    compile "org.codehaus.groovy:groovy-all:2.3.6"
     compile "commons-logging:commons-logging:1.1"
+	compile "commons-dbcp:commons-dbcp:1.4"
 
     compile "org.springframework:spring-context:${springVersion}"
     compile "org.springframework:spring-web:${springVersion}"
@@ -57,5 +58,7 @@ dependencies {
 
 	compile "org.jvnet.jax-ws-commons.spring:jaxws-spring:1.9"
 
-    testCompile 'junit:junit:4.11'
+	compile "org.hsqldb:hsqldb:2.3.1"
+
+    testCompile "junit:junit:4.11"
 }
